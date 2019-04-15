@@ -41,11 +41,14 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <h1>
-          <Link to='/'>
-            Spaced repetition
-          </Link>
-        </h1>
+        <div>
+          <h1>
+            <Link to='/'>
+              Зайтай Давталт
+            </Link>
+          </h1>
+          <h2 className='hidden-title'>(Spaced repetition)</h2>
+        </div>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

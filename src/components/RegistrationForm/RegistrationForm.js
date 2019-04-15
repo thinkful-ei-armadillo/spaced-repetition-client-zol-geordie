@@ -42,48 +42,52 @@ class RegistrationForm extends Component {
     return (
       <form
         onSubmit={this.handleSubmit}
+        className='registration-form'
       >
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
-        <div>
-          <Label htmlFor='registration-name-input'>
+        <div className='registration-inputs'>
+          {/* <Label htmlFor='registration-name-input'>
             Enter your name<Required />
-          </Label>
+          </Label> */}
           <Input
             ref={this.firstInput}
             id='registration-name-input'
             name='name'
+            placeholder='please enter your name'
             required
           />
         </div>
-        <div>
-          <Label htmlFor='registration-username-input'>
+        <div className='registration-inputs'>
+          {/* <Label htmlFor='registration-username-input'>
             Choose a username<Required />
-          </Label>
+          </Label> */}
           <Input
             id='registration-username-input'
             name='username'
+            placeholder='please enter a user name'
             required
           />
         </div>
-        <div>
-          <Label htmlFor='registration-password-input'>
+        <div className='registration-inputs'>
+          {/* <Label htmlFor='registration-password-input'>
             Choose a password<Required />
-          </Label>
+          </Label> */}
           <Input
             id='registration-password-input'
             name='password'
             type='password'
+            placeholder='please enter a password'
             required
           />
         </div>
         <footer>
-          <Button type='submit'>
+          <Button className = 'registration-submit' type='submit'>
             Sign up
           </Button>
           {' '}
-          <Link to='/login'>Already have an account?</Link>
+          <p className='login-link'>Already have an account? <Link to='/login'>Login here.</Link></p>
         </footer>
       </form>
     )

@@ -1,0 +1,25 @@
+.registration-form {
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+}
+
+.registration-submit {
+    width: 100px;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.login-link {
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 auto;
+}
