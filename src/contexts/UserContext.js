@@ -16,7 +16,7 @@ const UserContext = React.createContext({
   // setWords: () => {},
   processLogin: () => {},
   processLogout: () => {},
-  upadteUserLanguage: () => {}
+  updateUserLanguage: () => {}
 })
 
 export default UserContext
@@ -99,6 +99,8 @@ export class UserProvider extends Component {
     TokenService.clearCallbackBeforeExpiry()
     IdleService.unRegisterIdleResets()
     this.setUser({})
+    this.setLanguage({})
+    this.setWords([])
   }
 
   logoutBecauseIdle = () => {
@@ -106,6 +108,8 @@ export class UserProvider extends Component {
     TokenService.clearCallbackBeforeExpiry()
     IdleService.unRegisterIdleResets()
     this.setUser({ idle: true })
+    this.setLanguage({})
+    this.setWords([])
   }
 
   fetchRefreshToken = () => {
@@ -121,7 +125,7 @@ export class UserProvider extends Component {
       })
   }
 
-  upadteUserLanguage = () => {
+  updateUserLanguage = () => {
     LanguageService.getUserLanguage()
       .then(res => {
         this.clearError();
@@ -147,7 +151,7 @@ export class UserProvider extends Component {
       // setLanguage: this.setLanguage,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
-      upadteUserLanguage: this.upadteUserLanguage,
+      updateUserLanguage: this.upadteUserLanguage,
     }
     return (
       <UserContext.Provider value={value}>
