@@ -1,8 +1,33 @@
 input {
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-left: 3px;
-    height: 30px;
+    padding-left: 10px;
+    height: 35px;
     width: 250px;
     border-radius: 3px;
+    font-size: 15px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+button[type='submit'] {
+    width: 100px;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    background: #a93030;
+    border: 1px solid #721f1f;
+    color: white;
+    cursor: pointer;
+}
+
+button[type='submit']:hover,
+button[type='submit']:focus {
+    background: #721f1f;
+    transition: 0.5s;
+    /* color: #a93030; */
 }

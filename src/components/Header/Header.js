@@ -43,11 +43,15 @@ class Header extends Component {
       <header>
         <div>
           <h1>
-            <Link to='/'>
-              Зайтай Давталт
+            <Link to='/' className='title' data-hover='Spaced repetition'>
+              Ripetizione
             </Link>
           </h1>
-          <h2 className='hidden-title'>(Spaced repetition)</h2>
+          {/* <h1 className='title hidden-title'>
+            <Link to='/'>
+              
+            </Link>
+          </h1> */}
         </div>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

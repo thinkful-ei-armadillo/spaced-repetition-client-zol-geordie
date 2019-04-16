@@ -1,5 +1,55 @@
+.App {
+    height: 100vh;
+    background: #f7f7f7;
+}
+
 main {
-    max-width: 80vw;
+    max-width: 100vw;
     margin: 0 auto;
     text-align: center;
+    padding: 0;
+}
+
+.form-section {
+    background-image: url(../../images/architecture-boats-buildings-417344.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.form-box {
+    color: white;
+    width: 400px;
+    min-height: 320px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #000000ab;;
+}
+
+.form-box p {
+    color: #ec760c;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+.registration-form,
+.LoginForm {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.registration-inputs,
+.login-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: -webkit-center;
+}
+.registration-inputs label,
+.login-inputs label {
+    text-align: left;
 }
