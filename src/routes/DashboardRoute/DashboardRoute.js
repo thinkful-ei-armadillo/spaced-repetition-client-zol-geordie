@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import LanguageContext from '../../contexts/LanguageContext'
-import LanguageService from '../../services/language-api-service'
+import './DashboardRoute.css'
 
 
 class DashboardRoute extends Component {
@@ -26,9 +26,10 @@ class DashboardRoute extends Component {
             <p>incorrect answer count: {word.incorrect_count}</p>
           </li>)
     })
-    return (<ul>
-          {list}
-        </ul>)
+    return (
+      <ul>
+        {list}
+      </ul>)
   }
 
   render() {
