@@ -2,15 +2,21 @@ import React, { Component } from 'react'
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
+import LanguageService from '../services/language-api-service'
 
 const UserContext = React.createContext({
   user: {},
+  language: {},
+  words: [],
   error: null,
   setError: () => {},
   clearError: () => {},
   setUser: () => {},
+  // setLanguage: () => {},
+  // setWords: () => {},
   processLogin: () => {},
   processLogout: () => {},
+  upadteUserLanguage: () => {}
 })
 
 export default UserContext
@@ -18,7 +24,12 @@ export default UserContext
 export class UserProvider extends Component {
   constructor(props) {
     super(props)
-    const state = { user: {}, error: null }
+    const state = { 
+      user: {},
+      language: {},
+      words: [], 
+      error: null 
+    }
 
     const jwtPayload = TokenService.parseAuthToken()
 
@@ -58,6 +69,15 @@ export class UserProvider extends Component {
 
   setUser = user => {
     this.setState({ user })
+  }
+
+
+  setLanguage = (language) => {
+    this.setState({language});
+  }
+
+  setWords = (words) => {
+    this.setState({words});
   }
 
   processLogin = authToken => {
@@ -101,15 +121,33 @@ export class UserProvider extends Component {
       })
   }
 
+  upadteUserLanguage = () => {
+    LanguageService.getUserLanguage()
+      .then(res => {
+        this.clearError();
+        this.setLanguage(res.language);
+        this.setWords(res.words);
+      })
+      .catch(error => {
+        this.setError(error);
+      })
+    }
+
+
   render() {
     const value = {
       user: this.state.user,
+      language: this.state.language,
+      words: this.state.words,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
       setUser: this.setUser,
+      // setWords: this.setWords,
+      // setLanguage: this.setLanguage,
       processLogin: this.processLogin,
       processLogout: this.processLogout,
+      upadteUserLanguage: this.upadteUserLanguage,
     }
     return (
       <UserContext.Provider value={value}>

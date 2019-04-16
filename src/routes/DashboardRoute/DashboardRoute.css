@@ -1,3 +1,153 @@
+.dashboard {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lang-title {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 3px #c30000;
+    font-weight: 600;
+    background: url(../../images/architecture-boats-buildings-417344.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-title h2 {
+    display: inline;
+    font-size: 3rem;
+}
+.lang-title span {
+    display: block;
+} 
+
+.learn-link {
+    background: #e07504;
+    padding: 15px 20px;
+    font-weight: 600;
+    border-radius: 2px;
+    color: white;
+    letter-spacing: 0.05rem;
+    position: relative;
+    top: -10px;
+    left: 0px;
+}
+
+.learn-link:hover,
+.learn-link:focus {
+    background: #ff8000;
+    transition: 0.5s;
+}
+
+.words h3 {
+    margin: 15px 0 10px 0;
+    font-size: 34px;
+    color: #c30000;
+    text-shadow: 1.5px 1.3px #000000;
+}
+
+ul {
+    text-align: left;
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+}
 li {
-    border: 1px solid grey;
+    list-style: none;
+    display: inline-block;
+    width: 23%;
+    padding: 5px 15px;
+    margin: 1%;
+}
+
+li h4, li p {
+    margin: 3px 0;
+}
+
+ul li:nth-of-type(even){
+    background: #139a13;
+    color: white;
+}
+
+ul li:nth-of-type(odd){
+    background: #b71818;
+    color: white;
+}
+
+@media (min-width: 1480px) {
+    ul {
+        width: 80%;
+    }
+    li {
+        width: 18%;
+    }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1479px) {
+
+    ul {
+        width: 90%;
+    }
+    li {
+        width: 23%;
+    }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    li {
+        width: 31.33%;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+    li {
+        width: 48%;
+    }
+
+    .lang-title,
+    .lang-title h2{
+        font-size: 2.5rem;
+    }
+
+    .learn-link {
+        padding: 10px 15px;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+
+
+    .words h3 {
+        font-size: 30px;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    li {
+        width: 98%;
+    }
+
+    .lang-title,
+    .lang-title h2{
+        font-size: 2rem;
+    }
+
+    .learn-link {
+        padding: 8px 15px;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+
+    .words h3 {
+        font-size: 25px;
+    }
 }

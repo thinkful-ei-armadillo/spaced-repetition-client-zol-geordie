@@ -7,7 +7,7 @@ header {
     margin: 0 auto;
     height: 40px;
     /* this below works when logged in but adds extra white space when logged out */
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 header h1,
 header h1 a {
@@ -34,37 +34,93 @@ nav {
 }
 
 nav a {
-    padding: 5px 15px;
+    padding: 5px 10px;
     font-size: 14px;
-    width: 100px;
     text-align: -webkit-center;
-    border: 1px solid #cecece;
     margin-right: 10px;
-    background: #e6e6e6;
     font-weight: 500;
+    letter-spacing: 0.06rem;
 }
 
-nav a:hover,
-nav a:focus {
-    color: #ce3e46;
-    border: 1px solid #ce3e46;
+nav a.register {
+    text-align: center;
+    width: 80px;
+    background: green;
+    border-radius: 2px;
+    color: white;
+    opacity: 0.6;
 }
 
-/* .hidden-title {
-    display: none;
-} */
-
-/* .title:hover {
-    font-size: 0;
+nav a.logout {
+    text-align: center;
+    width: 70px;
+    background: green;
+    border-radius: 2px;
+    color: white;
+    opacity: 0.6;
 }
 
-.title:hover:after {
-    content: attr(data-cover);
-    font-size: 24px;
-} */
+nav a.login {
+    width: 60px;
+    background: #717171;
+    border-radius: 2px;
+    color: white;
+    opacity: 0.6;
+}
 
-@media screen and (max-width: 450px) {
-  .title {
-      margin-right: 10px;
-  }
+nav a.login:hover,
+nav a.login:focus,
+nav a.register:hover,
+nav a.register:focus,
+nav a.logout:hover,
+nav a.logout:focus {
+    /* color: #ce3e46; */
+    transition: 0.5s;
+    opacity: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        padding: 5px 30px;
+    }
+    
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    header {
+        padding: 4px 20px;
+    }
+
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    header {
+        padding: 3px 10px;
+    }
+
+    header h1,
+    header h1 a {
+        font-size: 20px;
+    }
+
+    .logged-in-username {
+        font-size: 0.8rem;
+    }
+
+    nav a {
+        padding: 3px 7px;
+        font-size: 14px;
+        margin-right: 6px;
+        font-weight: 400;
+        letter-spacing: 0.04rem;
+    }
+
+    nav a.logout{
+        width: 63px;
+    }
+
+    .title-container {
+        display: flex;
+        align-items: center;
+    }
 }

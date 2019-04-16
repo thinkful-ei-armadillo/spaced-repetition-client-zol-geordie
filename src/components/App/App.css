@@ -53,3 +53,11 @@ main {
 .login-inputs label {
     text-align: left;
 }
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .form-box {
+        width: 300px;
+        padding: 20px 0;
+    }
+}

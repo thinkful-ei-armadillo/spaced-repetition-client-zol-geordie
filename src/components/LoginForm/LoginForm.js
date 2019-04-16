@@ -6,7 +6,7 @@ import Button from '../Button/Button'
 
 class LoginForm extends Component {
   static defaultProps = {
-    onLoginSuccess: () => { }
+    onLoginSuccess: () => {},
   }
 
   static contextType = UserContext
@@ -29,6 +29,7 @@ class LoginForm extends Component {
         username.value = ''
         password.value = ''
         this.context.processLogin(res.authToken)
+        this.context.upadteUserLanguage()
         this.props.onLoginSuccess()
       })
       .catch(res => {

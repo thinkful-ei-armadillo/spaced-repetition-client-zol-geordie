@@ -1,26 +1,25 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-import LanguageContext from '../../contexts/LanguageContext'
+import UserContext from '../../contexts/UserContext'
 import './DashboardRoute.css'
 
 
 class DashboardRoute extends Component {
 
-  static contextType = LanguageContext;
+  static contextType = UserContext;
 
   renderLanguageContent = () => {
     return (
       <div>
-        <h2>{this.context.language.name}</h2>
-        <Link to='/learn'>Start practicing</Link>
-        <h3>Words to practice</h3>
+        <span>Improve your <h2>{this.context.language.name}</h2></span>
+        <span>with Ripetizione!</span>
       </div> )
   }
 
   renderWordContent = () => {
     let list = this.context.words.map((word) => {
       console.log(word);
-      return (<li key={word.id}>
+      return (<li key={word.id} className="word">
             <h4>{word.original}</h4>
             <p>correct answer count: {word.correct_count}</p>
             <p>incorrect answer count: {word.incorrect_count}</p>
@@ -34,9 +33,17 @@ class DashboardRoute extends Component {
 
   render() {
     return (
-      <section>
-        {Object.keys(this.context.language).length !== 0 && this.renderLanguageContent()}
-        {this.context.words.length !== 0 && this.renderWordContent()}
+      <section className="dashboard">
+        <div className="lang-title">
+          {Object.keys(this.context.language).length !== 0 && this.renderLanguageContent()}
+        </div>
+        <div>
+          <Link to='/learn' className="learn-link">Start practicing</Link>
+        </div>
+        <div className="words">
+          <h3>Words to practice</h3>
+          {this.context.words.length !== 0 && this.renderWordContent()}
+        </div>
       </section>
     );
   }
