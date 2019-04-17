@@ -29,7 +29,7 @@ class LoginForm extends Component {
         username.value = ''
         password.value = ''
         this.context.processLogin(res.authToken)
-        this.context.updateUserLanguage()
+        // this.context.updateUserLanguage()
         this.props.onLoginSuccess()
       })
       .catch(res => {

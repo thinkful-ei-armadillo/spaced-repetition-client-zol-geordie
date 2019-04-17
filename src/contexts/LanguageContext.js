@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import LanguageService from '../services/language-api-service'
 
 const LanguageContext = React.createContext({
     setLanguage: () => {},
@@ -20,18 +19,6 @@ export class LanguageProvider extends Component {
         error: null
     }
 
-    componentWillMount() {
-    LanguageService.getUserLanguage()
-      .then(res => {
-        this.clearError();
-        this.setLanguage(res.language);
-        this.setWords(res.words);
-      })
-      .catch(error => {
-        this.setError(error);
-      })
-    }
-
     setLanguage = (language) => {
         this.setState({language});
     }
@@ -49,8 +36,6 @@ export class LanguageProvider extends Component {
     }
 
     render() {
-        console.log(this.state.language)
-        console.log(this.state.words)
         const contextValue = {
             language: this.state.language,
             words: this.state.words,

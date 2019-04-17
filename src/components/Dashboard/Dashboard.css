@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-.lang-title {
+.banner {
     font-size: 3rem;
     color: white;
     text-shadow: 2px 3px #c30000;
@@ -16,15 +16,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.lang-title h2 {
-    display: inline;
-    font-size: 3rem;
+.banner p{
+    margin: 0;
 }
-.lang-title span {
-    display: block;
-} 
+
 
 .learn-link {
     background: #e07504;
@@ -44,11 +42,18 @@
     transition: 0.5s;
 }
 
-.words h3 {
-    margin: 15px 0 10px 0;
+.words h3,
+.words h2 {
+    margin: 10px 0 8px 0;
     font-size: 34px;
     color: #c30000;
     text-shadow: 1.5px 1.3px #000000;
+}
+
+.words p {
+    margin: 0;
+    color: #139a13;
+    font-size: 1.2rem;
 }
 
 ul {
@@ -113,8 +118,7 @@ ul li:nth-of-type(odd){
         width: 48%;
     }
 
-    .lang-title,
-    .lang-title h2{
+    .banner{
         font-size: 2.5rem;
     }
 
@@ -125,7 +129,8 @@ ul li:nth-of-type(odd){
     }
 
 
-    .words h3 {
+    .words h3,
+    .words h2 {
         font-size: 30px;
     }
 }
@@ -136,8 +141,7 @@ ul li:nth-of-type(odd){
         width: 98%;
     }
 
-    .lang-title,
-    .lang-title h2{
+    .banner{
         font-size: 2rem;
     }
 
@@ -147,7 +151,8 @@ ul li:nth-of-type(odd){
         letter-spacing: 0;
     }
 
-    .words h3 {
+    .words h3,
+    .words h2 {
         font-size: 25px;
     }
 }
