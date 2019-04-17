@@ -42,9 +42,12 @@ class Dashboard extends Component {
                 <div role='alert'>
                     {error && <p>{error}</p>}
                 </div>
-                <h2>{language.name}</h2>
-                <p>Total correct answers: {language.total_score}</p>
-                <h3>Words to practice</h3>
+                <div className="language-score">
+                    <h3>Words to practice</h3>
+                    <span>&nbsp;in&nbsp;</span>
+                    <h2>{language.name}</h2>
+                </div>
+                <p className="language">Total correct answers: {language.total_score}</p>
                 {this.context.words.length !== 0 && this.renderWordContent()}
             </div>
         )
