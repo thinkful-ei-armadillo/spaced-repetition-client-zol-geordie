@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import LanguageContext from '../../contexts/LanguageContext'
 import LanguageService from '../../services/language-api-service'
 import './Dashboard.css'
 
 class Dashboard extends Component {
-
+    state = {hover: false}
     static contextType = LanguageContext
 
     componentDidMount(){
@@ -33,23 +34,41 @@ class Dashboard extends Component {
     return <ul>{list}</ul>
    }
 
+    hoverOn = () => {
+        this.setState({ hover: true });
+    }
+
+    hoverOff = () => { 
+        this.setState({ hover: false });    
+    }
+
 
 
     render(){
         const {language, error} = this.context
         return (
-            <div className="words">
-                <div role='alert'>
-                    {error && <p>{error}</p>}
+            <>
+                <div className="banner">
+                    <p>Improve your learning</p>
+                    <p>with Ripetizione!</p>
                 </div>
-                <div className="language-score">
-                    <h3>Words to practice</h3>
-                    <span>&nbsp;in&nbsp;</span>
-                    <h2>{language.name}</h2>
+                    <Link to='/learn' className="learn-link"  onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}>
+                        {this.state.hover ? "Inizia a praticare" : "Start practicing"}
+                    </Link>
+                <div className="words">
+                    <div role='alert'>
+                        {error && <p>{error}</p>}
+                    </div>
+                    <div className="language-score">
+                        <h3>Words to practice</h3>
+                        <span>&nbsp;in&nbsp;</span>
+                        <h2>{language.name}</h2>
+                    </div>
+                    <p className="language">Total correct answers: {language.total_score}</p>
+                    {this.context.words.length !== 0 && this.renderWordContent()}
                 </div>
-                <p className="language">Total correct answers: {language.total_score}</p>
-                {this.context.words.length !== 0 && this.renderWordContent()}
-            </div>
+            </>
+
         )
     }
 }

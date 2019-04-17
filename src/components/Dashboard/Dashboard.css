@@ -27,13 +27,18 @@
 .learn-link {
     background: #e05704;
     padding: 12px 15px;
-    font-weight: 600;
+    text-align: center;
+    font-weight: 500;
     border-radius: 2px;
     color: white;
     letter-spacing: 0.05rem;
     position: relative;
     top: -10px;
     left: 0px;
+}
+
+.learn-link a{
+    margin: 0;
 }
 
 .learn-link:hover,

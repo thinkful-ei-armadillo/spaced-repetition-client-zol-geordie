@@ -5,6 +5,7 @@ import UserContext from '../../contexts/UserContext'
 import './Header.css'
 
 class Header extends Component {
+  state = {hover: false}
   static contextType = UserContext
 
   handleLogoutClick = () => {
@@ -38,20 +39,23 @@ class Header extends Component {
     )
   }
 
+  hoverOn = () => {
+    this.setState({ hover: true });
+  }
+
+  hoverOff = () => { 
+      this.setState({ hover: false });    
+  }
+
   render() {
     return (
       <header>
         <div className="title-container">
           <h1 >
-            <Link to='/' data-hover='Spaced repetition'>
-              Ripetizione
+            <Link to='/' data-hover='Spaced repetition' onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}>
+              {this.state.hover ? "Repetition" : "Ripetizione"}
             </Link>
           </h1>
-          {/* <h1 className='title hidden-title'>
-            <Link to='/'>
-              
-            </Link>
-          </h1> */}
         </div>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

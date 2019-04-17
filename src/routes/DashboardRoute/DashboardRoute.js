@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
 import Dashboard from '../../components/Dashboard/Dashboard'
 
 
@@ -8,14 +7,9 @@ class DashboardRoute extends Component {
   render() {
     return (
       <section className="dashboard">
-        <div className="banner">
-            <p>Improve your learning</p>
-            <p>with Ripetizione!</p>
-        </div>
-        <Link to='/learn' className="learn-link">Start practicing</Link>
         <Dashboard />
       </section>
-    );
+    )
   }
 }
 
