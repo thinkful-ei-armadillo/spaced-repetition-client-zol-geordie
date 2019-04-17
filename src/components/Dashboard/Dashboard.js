@@ -52,9 +52,12 @@ class Dashboard extends Component {
                     <p>Improve your learning</p>
                     <p>with Ripetizione!</p>
                 </div>
-                    <Link to='/learn' className="learn-link"  onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}>
+                <div className="learn-link">
+                    <Link to='/learn'   onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}>
                         {this.state.hover ? "Inizia a praticare" : "Start practicing"}
                     </Link>
+                </div>
+                    
                 <div className="words">
                     <div role='alert'>
                         {error && <p>{error}</p>}

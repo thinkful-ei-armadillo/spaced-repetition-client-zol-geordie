@@ -1,6 +1,7 @@
 .dashboard {
     margin: 0 auto;
     text-align: center;
+    text-align: -webkit-center;
 }
 
 .banner {
@@ -27,18 +28,19 @@
 .learn-link {
     background: #e05704;
     padding: 12px 15px;
+    width: 170px;
     text-align: center;
     font-weight: 500;
     border-radius: 2px;
-    color: white;
-    letter-spacing: 0.05rem;
     position: relative;
-    top: -10px;
+    top: -20px;
     left: 0px;
 }
 
 .learn-link a{
     margin: 0;
+    color: white;
+    letter-spacing: 0.05rem;
 }
 
 .learn-link:hover,
@@ -50,8 +52,10 @@
 .language-score {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
+
+
 
 .words h3,
 .words h2,
@@ -62,11 +66,19 @@
     text-shadow: 1.5px 1.3px #000000;
 }
 
+
+
 .language {
-    margin: 0;
+    margin: 2px 0 5px 0;
     color: #139a13;
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.language-score > h3,
+.language-score > span, 
+.language-score > h2 {
+    margin-top: 0;
 }
 
 ul {
@@ -141,9 +153,9 @@ ul li:nth-of-type(odd){
         letter-spacing: 0;
     }
 
-    .language-score {
+    /* .language-score {
         margin-top: 8px;
-    }
+    } */
 
     .words h3,
     .words h2,
@@ -171,10 +183,10 @@ ul li:nth-of-type(odd){
         font-weight: 500;
         letter-spacing: 0;
     }
-
+/* 
     .language-score {
         margin-top: 5px;
-    }
+    } */
 
     .words h3,
     .words h2,
