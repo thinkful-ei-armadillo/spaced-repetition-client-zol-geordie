@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "alias": "Ripetizione",
+    "name": "spaced-repetition-app",
+    "routes": [
+        {
+          "src": "^/static/(.*)",
+          "dest": "/static/$1"
+        },
+        {
+          "src": "^/favicon_package_v0.16/(.*)", 
+          "dest": "/favicon_package_v0.16/$1"
+        },
+        {
+          "src": ".*",
+          "dest": "/index.html"
+        }   
+    ]
+  }

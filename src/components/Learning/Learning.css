@@ -1,0 +1,97 @@
+.Learning{
+    margin: 0 auto;
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.learning-page {
+    color: black;
+    font-weight: 500;
+    background: url(../../images/875415.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.left{
+    margin-top: 140px;
+}
+.left, .right{
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    width: 400px;
+    border-radius: 3px;
+}
+
+.result {
+    text-align: -webkit-left;
+}
+
+/* .result p {
+    margin: 5px 0;
+} */
+
+div.word-info {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.word-info h2,
+.word-info span {
+    font-size: 1.6rem;
+    margin: 2px 0;
+}
+
+.result p{
+    margin: 3px 0;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+}
+
+.right .guess-btn {
+    width: 190px;
+}
+
+#learn-guess-input {
+    width: 330px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .word-info h2,
+    .word-info span {
+        font-size: 1.3rem;
+        margin: 2px 0;
+    }
+
+    .result p {
+        font-size: 0.9rem;
+    }
+    
+    .right .guess-label {
+        font-size: 16px;
+    }
+
+    #learn-guess-input {
+        width: 250px;
+    }
+
+    .right .guess-btn {
+        width: 160px;
+        font-size: 14px;
+    }
+
+    .left, .right {
+        padding: 30px 10px;
+        width: 300px;
+    }
+}
