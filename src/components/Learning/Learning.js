@@ -86,7 +86,7 @@ class Learning extends Component {
     renderGuessFeed = (guess, language) => {
         console.log(guess)
         return (
-            <div >
+            <div className='FeedbackForm'>
                 <h2>{guess.isCorrect ? 'You were correct! :D' : 'Good try, but not quite right :('}</h2>
                 <div className="DisplayScore">
                     <p>Your total score is: {guess.totalScore}</p>
@@ -94,7 +94,7 @@ class Learning extends Component {
                 <div className="DisplayFeedback">
                     <p>The correct translation for {language.nextWord} was {guess.answer} and you chose {this.state.userGuess}!</p>
                 </div>
-                <Button type="button" onClick={this.handleNextword}>Try another word!</Button>
+                <Button type="button" className='next-question' onClick={this.handleNextword}>Try another word!</Button>
             </div>
         )
     }

@@ -62,6 +62,27 @@ div.word-info {
     width: 190px;
 }
 
+.FeedbackForm {
+    background: rgba(255, 255, 255, 0.8);
+    margin-top: 190px;
+    margin-bottom: 20px;
+    padding: 30px 20px;
+    width: 400px;
+    border-radius: 3px;
+}
+
+.next-question {
+    width: 190px;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    background: #a93030;
+    border: 1px solid #721f1f;
+    color: white;
+    cursor: pointer;
+}
+
 #learn-guess-input {
     width: 330px;
 }
@@ -93,5 +114,15 @@ div.word-info {
     .left, .right {
         padding: 30px 10px;
         width: 300px;
+    }
+
+    .FeedbackForm {
+        padding: 30px 10px;
+        width: 300px;
+    }
+
+    .next-question {
+        width: 160px;
+        font-size: 14px;
     }
 }
