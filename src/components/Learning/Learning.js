@@ -26,15 +26,17 @@ class Learning extends Component {
     handleSubmitGuess = (e) => {
         e.preventDefault();
         const { guess } = e.target
-        console.log(guess.value)
         LanguageService
             .getListGuess({guess: guess.value})
             .then(guessList => {
                 this.context.clearError()
                 this.context.setGeussResult(guessList)
                 this.context.updateScore(guessList.totalScore)
-                this.setState({displayMode: true})
-                this.setState({userGuess: guess.value})
+                this.setState({
+                    displayMode: true,
+                    userGuess: guess.value
+                })
+                
             })
             .catch(this.context.setError)
     }
@@ -43,10 +45,12 @@ class Learning extends Component {
         LanguageService
             .getLanguageHead()
             .then(languageHead => {
-                this.setState({displayMode: false})
                 this.context.clearError()
                 this.context.setLanguageHead(languageHead)
-                this.setState({userGuess: ''})
+                this.setState({
+                    displayMode: false,
+                    userGuess: ''
+                })
             })
             .catch(this.context.setError)        
     }
@@ -56,7 +60,7 @@ class Learning extends Component {
             <>
                 <div className="left">
                     <div className="word-info">
-                        <h2>Translate the word:</h2>&nbsp;
+                        <h2>Translate the word:</h2>
                         <span>{language.nextWord}</span>
                     </div>
                     <hr></hr>
@@ -86,7 +90,6 @@ class Learning extends Component {
     }
 
     renderGuessFeed = (guess, language) => {
-        console.log(guess)
         return (
             <div className='FeedbackForm'>
                 <h2>{guess.isCorrect ? 'You were correct! :D' : 'Good try, but not quite right :('}</h2>

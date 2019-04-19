@@ -22,7 +22,6 @@ export class LearningProvider extends Component {
     }
 
     setGeussResult = (guessResult) => {
-        // console.log(guessResult)
         this.setState({guessResult})
     }
 
@@ -31,12 +30,9 @@ export class LearningProvider extends Component {
     }
 
     updateScore = (totalScore) => {
-        console.log(totalScore)
-        console.log('before', this.state.languageHead)
         const tempLanguage = this.state.languageHead
         tempLanguage['totalScore']=totalScore
         this.setState({languageHead: tempLanguage})
-        console.log('after', this.state.languageHead)
     }
 
     setError = (error) => {
