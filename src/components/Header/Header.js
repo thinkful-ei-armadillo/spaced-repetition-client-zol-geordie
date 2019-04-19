@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import UserContext from '../../contexts/UserContext'
+import logo from '../../images/flag.png'
 import './Header.css'
 
 class Header extends Component {
@@ -51,9 +52,10 @@ class Header extends Component {
     return (
       <header>
         <div className="title-container">
-          <h1 >
+          <img src={logo} alt='italian flag' className='logo'/>
+          <h1>
             <Link to='/' data-hover='Spaced repetition' onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}>
-              {this.state.hover ? "Repetition" : "Ripetizione"}
+              {this.state.hover ? "Ripetizione spaziale" : "Spaced repetition"}
             </Link>
           </h1>
         </div>

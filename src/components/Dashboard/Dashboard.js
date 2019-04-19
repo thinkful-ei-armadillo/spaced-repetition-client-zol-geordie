@@ -50,7 +50,7 @@ class Dashboard extends Component {
             <>
                 <div className="banner">
                     <p>Improve your learning</p>
-                    <p>with Ripetizione!</p>
+                    <p>with Ripetizione spaziale!</p>
                 </div>
                 <div className="learn-link">
                     <Link to='/learn'   onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}>

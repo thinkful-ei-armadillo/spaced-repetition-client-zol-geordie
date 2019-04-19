@@ -32,6 +32,7 @@ class Learning extends Component {
             .then(guessList => {
                 this.context.clearError()
                 this.context.setGeussResult(guessList)
+                this.context.updateScore(guessList.totalScore)
                 this.setState({displayMode: true})
                 this.setState({userGuess: guess.value})
             })
@@ -58,6 +59,7 @@ class Learning extends Component {
                         <h2>Translate the word:</h2>&nbsp;
                         <span>{language.nextWord}</span>
                     </div>
+                    <hr></hr>
                     <div className='result'>
                         <p>Your total score is: {language.totalScore}</p>
                         <p>You have answered this word correctly {language.wordCorrectCount} times.</p>
@@ -89,7 +91,7 @@ class Learning extends Component {
             <div className='FeedbackForm'>
                 <h2>{guess.isCorrect ? 'You were correct! :D' : 'Good try, but not quite right :('}</h2>
                 <div className="DisplayScore">
-                    <p>Your total score is: {guess.totalScore}</p>
+                    <p>Your total score is: {language.totalScore}</p>
                 </div>
                 <div className="DisplayFeedback">
                     <p>The correct translation for {language.nextWord} was {guess.answer} and you chose {this.state.userGuess}!</p>
@@ -101,10 +103,13 @@ class Learning extends Component {
 
 
     render(){
-        const { languageHead, guessResult } = this.context;
+        const { languageHead, guessResult, error } = this.context;
 
         return (
             <div className="learning-page">
+                <div role='alert'>
+                    {error && <p>{error}</p>}
+                </div>
                {!this.state.displayMode && this.renderLanguageHead(languageHead)}
                {this.state.displayMode && this.renderGuessFeed(guessResult, languageHead)}
             </div>

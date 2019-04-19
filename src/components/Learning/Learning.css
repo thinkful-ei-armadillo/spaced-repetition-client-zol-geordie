@@ -37,6 +37,10 @@
     margin: 5px 0;
 } */
 
+hr {
+    margin: 2px;
+}
+
 div.word-info {
     display: flex;
     align-items: baseline;
@@ -45,7 +49,7 @@ div.word-info {
 
 .word-info h2,
 .word-info span {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 2px 0;
 }
 
@@ -90,7 +94,7 @@ div.word-info {
 @media (min-width: 320px) and (max-width: 480px) {
     .word-info h2,
     .word-info span {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin: 2px 0;
     }
 

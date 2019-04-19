@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 const LearningContext = React.createContext({
     setLanguageHead: () => {},
     setGeussResult: () => {},
-    // setShowWord: () => {},
+    updateScore: () => {},
     setError: () => {},
     clearError: () => {},
     languageHead: {},
@@ -18,13 +18,8 @@ export class LearningProvider extends Component {
     state = {
         languageHead: {},
         guessResult: {},
-        // showWord: false,
         error: null
     }
-
-    // setShowWord = (showWord) => {
-    //     this.setState({showWord})
-    // }
 
     setGeussResult = (guessResult) => {
         // console.log(guessResult)
@@ -33,6 +28,15 @@ export class LearningProvider extends Component {
 
     setLanguageHead = (languageHead) => {
         this.setState({languageHead})
+    }
+
+    updateScore = (totalScore) => {
+        console.log(totalScore)
+        console.log('before', this.state.languageHead)
+        const tempLanguage = this.state.languageHead
+        tempLanguage['totalScore']=totalScore
+        this.setState({languageHead: tempLanguage})
+        console.log('after', this.state.languageHead)
     }
 
     setError = (error) => {
@@ -47,12 +51,11 @@ export class LearningProvider extends Component {
         const contextValue = {
             languageHead: this.state.languageHead,
             guessResult: this.state.guessResult,
-            // showWord: this.state.showWord,
             error: this.state.error,
 
             setLanguageHead: this.setLanguageHead,
             setGeussResult: this.setGeussResult,
-            // setShowWord: this.setShowWord,
+            updateScore: this.updateScore,
             setError: this.setError,
             clearError: this.clearError
         }

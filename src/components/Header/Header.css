@@ -24,6 +24,16 @@ header h1 a {
     align-items: center;
 }
 
+.title-container{
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 24px;
+    padding-right: 2px;
+}
+
 .logged-in-username {
     margin-right: 10px;
 }
@@ -95,12 +105,16 @@ nav a.logout:focus {
 
 @media (min-width: 320px) and (max-width: 480px) {
     header {
-        padding: 3px 10px;
+        padding: 3px 5px;
     }
 
     header h1,
     header h1 a {
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    .logo {
+        height: 16px;
     }
 
     .logged-in-username {
