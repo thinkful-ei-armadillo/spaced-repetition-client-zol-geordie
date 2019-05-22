@@ -36,6 +36,6 @@
 
 ## Screenshots
 
-![Register](https://imgur.com/a/tMpx6wC)
-![Dashboard](https://imgur.com/a/tMpx6wC)
-![Learning](https://imgur.com/a/sMimfZs)
+![Register](https://i.imgur.com/Ymw7nH4.png)
+![Dashboard](https://i.imgur.com/4C2tQUF.png)
+![Learning](https://i.imgur.com/TgjO2QE.png)
